@@ -8,7 +8,6 @@ import ExpandMoreOutlined from "@material-ui/icons/ExpandMoreOutlined";
 import AccountCircleIclon from "@material-ui/icons/AccountCircle";
 
 const Post = ({ profilePic, imgName, username, timestamp, message }) => {
-  console.log(timestamp);
   return (
     <div className="post">
       <div className="post__top">
@@ -24,7 +23,7 @@ const Post = ({ profilePic, imgName, username, timestamp, message }) => {
       {imgName ? (
         <div className="post__image">
           <img
-            src={`http://localhost:9000/retrieve/image/single?name=${imgName}`}
+            src={`https://fbook-clone.herokuapp.com/retrieve/image/single?name=${imgName}`}
           />
         </div>
       ) : (
@@ -33,7 +32,7 @@ const Post = ({ profilePic, imgName, username, timestamp, message }) => {
       <div className="post__options">
         <div className="post__option">
           <ThumbUpIcon />
-          <p> Like </p>
+          <p> Like </p>\
         </div>
         <div className="post__option">
           <ChatBubbleOutlineIcon />

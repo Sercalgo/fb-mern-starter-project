@@ -12,7 +12,7 @@ var pusher = new Pusher("47bf8abc5a7a9491829b", {
 });
 
 const Feed = () => {
-  const [profilePic, setProfilePic] = useState("");
+  const [profilePic, setProfilePic] = useState('')
   const [postsData, setPostsData] = useState([]);
 
   const syncFeed = () => {
@@ -34,19 +34,21 @@ const Feed = () => {
   }, []);
 
   return (
-    <div className="feed">
-      <StoryReel />
-      <MessageSender />
+    <div className='feed' >
+        <StoryReel />
+        <MessageSender />
 
-      {postsData.map((entry) => (
-        <Post
-          profilePic={entry.avatar}
-          message={entry.text}
-          timestamp={entry.timestamp}
-          imgName={entry.imgName}
-          username={entry.user}
-        />
-      ))}
+        {
+            postsData.map(entry => (
+                <Post
+                    profilePic={entry.avatar}
+                    message={entry.text}
+                    timestamp={entry.timestamp}
+                    imgName={entry.imgName}
+                    username={entry.user}
+                />
+            ))
+        }
     </div>
   );
 };
